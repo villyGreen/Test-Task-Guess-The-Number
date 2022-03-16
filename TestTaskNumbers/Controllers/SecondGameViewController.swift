@@ -63,6 +63,7 @@ extension SecondGameViewController: UITextFieldDelegate {
         numberTextField.textColor = .white
         numberTextField.placeholder = "0 - 100"
         numberTextField.delegate = self
+        numberTextField.keyboardType = UIKeyboardType.numberPad
         numberTextField.addTarget(self, action: #selector(textFromTextField), for: .allEditingEvents)
         // Labels Stack View
         let labelsStackView = UIStackView(arrangedSubviews: [descriptionLabel, numberTextField])

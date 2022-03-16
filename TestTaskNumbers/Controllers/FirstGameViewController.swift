@@ -24,6 +24,7 @@ class FirstGameViewController: UIViewController {
     var answer = Int()
     var minValue = 100
     var maxValue = 0
+    var temp = 0
     var game = Game()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +143,10 @@ extension FirstGameViewController: UITextFieldDelegate {
         game.computerCount += 1
     }
     private func computerGuess(numOne: Int, numTwo: Int) {
+        while answer == temp {
         answer =  GameService.shared.computerGuess(numOne: numOne, numTwo: numTwo)
+        }
+        temp = answer
         let timeOfComputerAnswer = Int.random(in: 1...3)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(timeOfComputerAnswer)) {
             self.computerAnswer.text = "Computer answer is \(self.answer)"
