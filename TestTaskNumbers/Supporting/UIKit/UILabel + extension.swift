@@ -9,7 +9,7 @@
 import UIKit
 
 extension UILabel {
-    func setupLabel(color: UIColor,text: String, alpha: CGFloat, size: CGFloat, width: CGFloat?) {
+    func setupLabel(color: UIColor, text: String, alpha: CGFloat, size: CGFloat, width: CGFloat?) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.text = text
         self.textColor = color

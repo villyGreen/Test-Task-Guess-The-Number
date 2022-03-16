@@ -12,9 +12,9 @@ class StartViewController: UIViewController {
     let mainLabel = UILabel()
     let startButton = UIButton(type: .system)
     let gradientView = GradientView(from: .topTrailing,
-                                    to: .bottomLeading,
-                                    startColor: #colorLiteral(red: 0.7507003285, green: 0.391231853, blue: 0.8549019694, alpha: 1),
-                                    endColor: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1))
+                                    toV: .bottomLeading,
+                                    startColor: UIColor(hex: "BF64DA"),
+                                    endColor: UIColor(hex: "3DACF7"))
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
@@ -23,42 +23,54 @@ class StartViewController: UIViewController {
         super.viewDidLayoutSubviews()
         setupScreen()
     }
-    deinit {
-        print("gg")
-    }
-    
 }
-
+// MARK: - Setup Elements
 extension StartViewController {
     private func setupElements() {
         view.addSubview(gradientView)
+        // Gradient View
         gradientView.addSubview(mainLabel)
         gradientView.addSubview(startButton)
-        gradientView.translatesAutoresizingMaskIntoConstraints = false
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        startButton.translatesAutoresizingMaskIntoConstraints = false
         gradientView.contentMode = .scaleAspectFill
-        mainLabel.setupLabel(color: .white ,text: "Guess the number", alpha: 1, size: 24, width: 8)
-        startButton.setupButton(color: .white, title: "Start", size: 20, tintColor: .black, cornerRadius: 11, width: 100)
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        // Main Label
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
+        mainLabel.setupLabel(color: .white, text: "Guess the number", alpha: 1, size: 24, width: 8)
+        // Start Button
+        startButton.translatesAutoresizingMaskIntoConstraints = false
+        startButton.setupButton(color: .white, title: "Start",
+                                size: 20, tintColor: .black,
+                                cornerRadius: 11, width: 100)
         startButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
     }
+    // MARK: - Setup Screen
     private func setupScreen() {
         NSLayoutConstraint.activate([
+            // Gradient View
             gradientView.topAnchor.constraint(equalTo: view.topAnchor),
             gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            // Main Label
             mainLabel.topAnchor.constraint(equalTo: gradientView.topAnchor, constant: 100),
             mainLabel.centerXAnchor.constraint(equalTo: gradientView.centerXAnchor),
+            // Start Button
             startButton.bottomAnchor.constraint(equalTo: gradientView.bottomAnchor, constant: -100),
             startButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
             startButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50)
         ])
     }
+    // MARK: - Transition
     @objc private func startGame() {
         let selectVc = SelectViewController()
-        selectVc.modalTransitionStyle = .crossDissolve
-        selectVc.modalPresentationStyle = .fullScreen
-        self.present(selectVc, animated: true, completion: nil)
+        let window = UIApplication.shared.windows[0] as UIWindow
+        UIView.transition(
+            from: window.rootViewController!.view,
+            to: selectVc.view,
+            duration: 0.20,
+            options: .transitionCrossDissolve,
+            completion: { _ in
+            window.rootViewController = selectVc
+        })
     }
 }

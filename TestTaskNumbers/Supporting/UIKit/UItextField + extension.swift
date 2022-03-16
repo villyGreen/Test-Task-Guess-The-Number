@@ -22,7 +22,6 @@ extension UITextField {
         bottomView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         bottomView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         bottomView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        
     }
         func disableAutoFill() {
             if #available(iOS 12, *) {

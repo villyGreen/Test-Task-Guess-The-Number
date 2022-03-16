@@ -23,6 +23,7 @@
 		3A742A9027E1C9AC0040E585 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742A8F27E1C9AC0040E585 /* ScoreViewController.swift */; };
 		3A742A9227E1DBF20040E585 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742A9127E1DBF20040E585 /* GameModel.swift */; };
 		3A742A9427E1DCD40040E585 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A742A9327E1DCD40040E585 /* GameService.swift */; };
+		3AD824D127E254E2002B4294 /* UIColor + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD824D027E254E2002B4294 /* UIColor + extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3A742A8F27E1C9AC0040E585 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		3A742A9127E1DBF20040E585 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		3A742A9327E1DCD40040E585 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		3AD824D027E254E2002B4294 /* UIColor + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +78,10 @@
 		3A742A6627E099720040E585 /* TestTaskNumbers */ = {
 			isa = PBXGroup;
 			children = (
+				3AD824CF27E252A9002B4294 /* Models */,
+				3A742A7C27E099EC0040E585 /* Controllers */,
 				3A742A8827E0BDF90040E585 /* Services */,
 				3A742A7B27E099DD0040E585 /* Supporting */,
-				3A742A7C27E099EC0040E585 /* Controllers */,
-				3A742A9127E1DBF20040E585 /* GameModel.swift */,
 			);
 			path = TestTaskNumbers;
 			sourceTree = "<group>";
@@ -116,6 +118,7 @@
 				3A742A8227E0A4D70040E585 /* UIButton + extension.swift */,
 				3A742A8027E0A4960040E585 /* UILabel + extension.swift */,
 				3A742A8627E0ADCE0040E585 /* UItextField + extension.swift */,
+				3AD824D027E254E2002B4294 /* UIColor + extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -129,6 +132,14 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		3AD824CF27E252A9002B4294 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A742A9127E1DBF20040E585 /* GameModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +150,7 @@
 				3A742A6027E099720040E585 /* Sources */,
 				3A742A6127E099720040E585 /* Frameworks */,
 				3A742A6227E099720040E585 /* Resources */,
+				3AD824D227E257F1002B4294 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -194,6 +206,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3AD824D227E257F1002B4294 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A742A6027E099720040E585 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -205,6 +237,7 @@
 				3A742A6827E099720040E585 /* AppDelegate.swift in Sources */,
 				3A742A8A27E0BE160040E585 /* ValidateService.swift in Sources */,
 				3A742A8527E0AB760040E585 /* SelectViewController.swift in Sources */,
+				3AD824D127E254E2002B4294 /* UIColor + extension.swift in Sources */,
 				3A742A7F27E09E380040E585 /* GradientView.swift in Sources */,
 				3A742A8127E0A4960040E585 /* UILabel + extension.swift in Sources */,
 				3A742A6A27E099720040E585 /* SceneDelegate.swift in Sources */,

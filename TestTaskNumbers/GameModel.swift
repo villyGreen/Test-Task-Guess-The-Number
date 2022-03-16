@@ -8,10 +8,9 @@
 
 import Foundation
 
-
 struct Game {
     var yourNumber = 0
-    var ComputerNumber = 0
+    var computerNumber = 0
     var yourCount = 1
     var computerCount = 1
 }

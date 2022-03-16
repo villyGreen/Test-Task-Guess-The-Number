@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIButton {
-    func setupButton(color: UIColor, title: String,size : CGFloat, tintColor: UIColor,cornerRadius: CGFloat,width: CGFloat) {
+func setupButton(color: UIColor, title: String, size : CGFloat, tintColor: UIColor, cornerRadius: CGFloat, width: CGFloat) {
         self.backgroundColor = color
         self.setTitle(title, for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: size)

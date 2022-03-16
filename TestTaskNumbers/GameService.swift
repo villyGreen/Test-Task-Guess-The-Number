@@ -11,20 +11,19 @@ import UIKit
 class GameService {
     static let shared = GameService()
     
-    func ComputerGuess(NumOne: Int, numTwo: Int) -> Int {
-        let number = Int.random(in: NumOne...numTwo)
+    func computerGuess(numOne: Int, numTwo: Int) -> Int {
+        let number = Int.random(in: numOne...numTwo)
         return number
     }
-    
-    func youGuess(yourNumber: Int, ComputerNumber: Int) -> Int {
+    func youGuess(yourNumber: Int, computerNumber: Int) -> Int {
         var result = 0
-        if yourNumber > ComputerNumber {
+        if yourNumber > computerNumber {
             result = 1
         }
-        if yourNumber < ComputerNumber {
+        if yourNumber < computerNumber {
             result = 2
         }
-        if yourNumber == ComputerNumber {
+        if yourNumber == computerNumber {
             result = 3
         }
         return result
